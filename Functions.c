@@ -3,7 +3,11 @@
 #pragma config(Sensor, dgtl1,  rightEncoder,   sensorQuadEncoder)
 #pragma config(Sensor, dgtl3,  leftEncoder,    sensorQuadEncoder)
 
-// Feel free to rename these in the "Motors and Sensors Setup" window under "Robot" BUT BEWARE!!
+// CHANGE THIS TO YOUR ROBOT!!
+// The port numbers i mean
+// AND DO IT THORUGH THE "Motors and Sensors Setup" WINDOW (just to be formal and so you dont break things)
+
+// Feel free to rename these in the "Motors and Sensors Setup" window BUT BEWARE!!
 // 	You would need to change their names in almost every function below (your call tho)
 
 int InToDegrees(float in) {
