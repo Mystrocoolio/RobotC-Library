@@ -1,0 +1,54 @@
+// This is some code that really only applies to Team A's variable driving system
+
+#pragma config(Motor,  port2,           rightFrontMotor,    tmotorNormal, openLoop, reversed)
+#pragma config(Motor,  port3,           rightBackMotor,    tmotorNormal, openLoop, reversed)
+#pragma config(Motor,  port4,           leftFrontMotor,     tmotorNormal, openLoop)
+#pragma config(Motor,  port5,           leftBackMotor,     tmotorNormal, openLoop)
+#pragma config(Sensor, dgtl1,  rightFrontEncoder,   sensorQuadEncoder)
+#pragma config(Sensor, dgtl3,  rightBackEncoder,   sensorQuadEncoder)
+#pragma config(Sensor, dgtl5,  leftFrontEncoder,    sensorQuadEncoder)
+#pragma config(Sensor, dgtl7,  leftBackEncoder,    sensorQuadEncoder)
+
+// WARNING!!! I totaly made these pragma statements up, so best to just make your own pragma biz through the 
+// "Motors and Sensors Setup" window. THE NAMES MATTER THOUGH! KEEP THE ONES HERE OR CHANGE IN THE CODE!
+
+void rollUp(float degree, int speed) {
+	SensorValue[rightEncoder] = 0;
+  SensorValue[leftEncoder] = 0;
+  
+  motor[rightFrontMotor] = -1*speed;
+  motor[leftFrontMotor] = -1*speed;
+  motor[rightBackMotor] = speed;
+  motor[leftBackMotor] = speed;
+
+  while(SensorValue[leftFrontEncoder] < degree){
+
+  }
+
+  motor[rightFrontMotor] = 0;
+  motor[leftFrontMotor] = 0;
+  motor[rightBackMotor] = 0;
+  motor[leftBackMotor] = 0;
+}
+void rollDown(float degree, int speed) {
+	SensorValue[rightEncoder] = 0;
+  SensorValue[leftEncoder] = 0;
+  
+  motor[rightFrontMotor] = speed;
+  motor[leftFrontMotor] = speed;
+  motor[rightBackMotor] = -1*speed;
+  motor[leftBackMotor] = -1*speed;
+
+  while(SensorValue[leftFrontEncoder] < degree){
+
+  }
+
+  motor[rightFrontMotor] = 0;
+  motor[leftFrontMotor] = 0;
+  motor[rightBackMotor] = 0;
+  motor[leftBackMotor] = 0;
+}
+
+
+
+
